@@ -1,26 +1,27 @@
+function getFormatedTime(date){
+
+    // Get full Date
+    const day = date.toLocaleString('en-us', {  weekday: 'short' });
+    const month = date.toLocaleString('en-us', {  month: 'short' });
+    const dayOfBirth = date.getDate()
+    const yearOfBirth = date.getFullYear()
+
+    return `${day} ${month} ${dayOfBirth} ${yearOfBirth}`
+    
+}
+
 
 function IdCard({lastName, firstName, gender, height, birth, picture}){
     //console.log(typeof(birth), birth)
+    const fullDate = getFormatedTime(birth)
      
-    /* ----------------------------- Javascript code ---------------------------- */
-    
-    // Get full Date
-    const day = birth.toLocaleString('en-us', {  weekday: 'short' });
-    const month = birth.toLocaleString('en-us', {  month: 'short' });
-    const dayOfBirth = birth.getDate()
-    const yearOfBirth = birth.getFullYear()
-
-    const fullDate = `${day} ${month} ${dayOfBirth} ${yearOfBirth}`
-    
-    console.log(day, month, dayOfBirth,yearOfBirth)
-
-    //Convert heigh in cm to m
+    //Convert height in cm to m
     const heightM = height * 0.01
 
-    /* ----------------------------- Estructure code ---------------------------- */
+    /* ----------------------------- Estructure Code ---------------------------- */
     return (
         <>
-        <div id="id-card">
+        <div className="id-card">
             <img src={picture} alt="" />
             <div className="data">
                 <p><strong>Fisrt Name:</strong> {firstName}</p>
