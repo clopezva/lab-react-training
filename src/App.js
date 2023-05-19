@@ -4,6 +4,7 @@ import './App.css';
 /* ------------------------------- Components ------------------------------- */
 import IdCard from './components/IdCard';
 import Greeting from './components/Greeting'; 
+import Random from './components/Random';
 
 
 function App() {
@@ -34,6 +35,9 @@ function App() {
     <Greeting lang="de">Ludwig</Greeting>
     <Greeting lang="es">Carmen</Greeting>
     <Greeting lang="kr">카르멘</Greeting>
+    <h2 style={{textAlign: "center"}}>Iteration 3 | Component: Random</h2>
+    <Random min={1} max={6}/>
+    <Random min={1} max={100}/>
     </>
   );
 }

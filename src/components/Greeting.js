@@ -22,8 +22,8 @@ function Greeting({lang, children}){
     const greeting = translate(lang)
     
     return (
-        <div className="greeting">
-        <h2>{greeting} {children}!</h2>
+        <div className="section-style">
+        <h3>{greeting} {children}!</h3>
         </div>
     )
 
