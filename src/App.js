@@ -3,12 +3,13 @@ import './App.css';
 
 /* ------------------------------- Components ------------------------------- */
 import IdCard from './components/IdCard';
+import Greeting from './components/Greeting'; 
 
 
 function App() {
   return (
     <>
-    <h1 style={{textAlign: "center"}}>Id Card</h1>
+    <h2 style={{textAlign: "center"}}>Iteration 1 | Component: IdCard</h2>
     <div className='id-container'>
       <IdCard 
       lastName='Doe'
@@ -27,7 +28,12 @@ function App() {
       picture="https://randomuser.me/api/portraits/women/44.jpg"
       />
     </div>
-    
+    <h2 style={{textAlign: "center"}}>Iteration 2 | Component: Greetings</h2>
+    <Greeting lang="en">Ludwig</Greeting>
+    <Greeting lang="fr">François</Greeting>
+    <Greeting lang="de">Ludwig</Greeting>
+    <Greeting lang="es">Carmen</Greeting>
+    <Greeting lang="kr">카르멘</Greeting>
     </>
   );
 }

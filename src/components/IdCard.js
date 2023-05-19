@@ -10,7 +10,6 @@ function getFormatedTime(date){
     
 }
 
-
 function IdCard({lastName, firstName, gender, height, birth, picture}){
     //console.log(typeof(birth), birth)
     const fullDate = getFormatedTime(birth)
