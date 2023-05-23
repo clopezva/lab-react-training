@@ -1,6 +1,9 @@
-function randomFromInterval(min, max){
-    return Math.floor(Math.random() * (max - min) + min)
+
+function randomIntFromInterval(min, max) {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
 
 
 function Random({min, max}){
