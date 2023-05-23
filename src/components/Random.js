@@ -8,7 +8,7 @@ function randomIntFromInterval(min, max) {
 
 function Random({min, max}){
     
-    const randomNumber = randomFromInterval(min,max)
+    const randomNumber = randomIntFromInterval(min,max)
 
     return (
             <h3 className="section-style">{`Random value between ${min} and ${max} = ${randomNumber}`}</h3>

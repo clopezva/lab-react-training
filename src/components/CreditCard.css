@@ -1,0 +1,31 @@
+.card-component{
+    display: flex;
+}
+
+.creditCard{
+    padding: 1rem;
+    border-radius: 16px;
+    width: 300px;
+    margin: 10px;
+}
+
+.card-logo{
+    justify-content: flex-end;
+    width: 60px;
+    height: 20px;
+}
+
+.card-expiration{
+    display: flex;
+    gap: 1rem;
+}
+
+.card-number{
+    font-size: 26px;
+    text-align: center;
+    margin: 20px 0
+}
+
+.creditCard .bank {
+    margin-left: 20px;
+}
