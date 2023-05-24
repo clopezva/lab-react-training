@@ -4,27 +4,13 @@ import './CreditCard.css'
 
 function CreditCard({type, number, expirationMonth, expirationYear, bank, owner, bgColor, color}){
 
-    // Split the card number into an array of individual digits
-    const digits = number.split("")
-
-    // Replace all digits except the last 4 with dots
-    const maskedDigits = digits.map((digit, index) => {
-        return index < digits.length - 4 ? " • " : digit;
-      });
-
-      // Join the masked digits back into a single string
-      const maskedCardNumber = maskedDigits.join("")
-
-    const image = (type === "Visa" ? visa : masterCard)
-
-
     return (
         <>
         <div className='creditCard' style={{backgroundColor: bgColor, color: color}}>
-            <div style={{display: "flex", justifyContent: "flex-end"}}><img className='card-logo' src={image}/></div>
-        <div className='card-number'>{maskedCardNumber}</div>
+            <div style={{display: "flex", justifyContent: "flex-end"}}><img className='card-logo' src={(type === "Visa" ? visa : masterCard)}/></div>
+        <div className='card-number'>•••• •••• •••• {number.substr(-4)}</div>
         <div className='card-expiration'>
-            <span>Expires 03/21</span>
+            <span>Expires {`0${expirationMonth}/${expirationYear.toString().substr(2)}`}</span>
             <span className='bank'>{bank}</span>
         </div>
         <div>{owner}</div>
@@ -37,13 +23,29 @@ function CreditCard({type, number, expirationMonth, expirationYear, bank, owner,
 export default CreditCard
 
 
-
-
-
- {/* <div style={CardStyle}>
+ /* <div style={CardStyle}>
             <div style={{display: "flex", justifyContent: "flex-end"}}><img src={image} style={imgStyle}></img></div>
             <p style={cardNumberStyle}>{maskedCardNumber}</p>
             <p>Expires {expirationMonth}{expirationYear}   {bank}</p>
             <p>{owner}</p>
             
-        </div> */}
+        </div> */
+
+        // function maskedNumbers(cardNumber){
+        //     // We need to separe the number in 4 digits.
+        
+        //     //Determine the length of the input string.
+        //     const length = cardNumber.length
+        
+        //     // Calculate the number of digits to mask, which is the total length minus 4.
+        //     const last4Digits = cardNumber.substring(length - 4)
+        //     const maskedDigits = "•".repeat(length - 4);
+        
+        //      // Split the masked digits into groups of 4 digits with a space between them.
+        //      const groupedDigits = maskedDigits.match(/.{1,4}/g).join(" ");
+        
+        //     const cardFormated = groupedDigits + "  " + last4Digits
+        
+        //     return cardFormated
+        // }
+        
