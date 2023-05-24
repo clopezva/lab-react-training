@@ -11,10 +11,10 @@ function BoxColor({r,g,b}){
 
     const divStyle = {
         backgroundColor: `rgb(${r},${g},${b})`,
-        padding: "20px",
+        padding: "10px",
         textAlign: "center",
-        width: "300px",
-       
+        border: "1px solid #000",
+        margin: "10px 0"
     }
     const pStyle = {
         fontWeight: "bold",
