@@ -8,6 +8,7 @@ import Greeting from './components/Greeting';
 import Random from './components/Random';
 import BoxColor from './components/BoxColor';
 import CreditCard from './components/CreditCard';
+import LikeButton from './components/LikeButton';
 
 
 function App() {
@@ -79,6 +80,10 @@ function App() {
           color="white" 
         />
       </section>
+      <h2>Iteration 8 | State: LikeButton</h2>
+      <LikeButton/>
+      <LikeButton/>
+
     </>
   );
 }
