@@ -15,3 +15,10 @@
     margin-bottom: 1rem;
     list-style: none;
 }
+
+.btn-country{
+    padding: 1rem;
+    font-size: 1.12rem;
+    margin-left: 1rem;
+    background-color: rgb(111, 111, 211);
+}
