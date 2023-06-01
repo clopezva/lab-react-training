@@ -1,8 +1,11 @@
 // En la variable profiles cargar un array de objetos, pues son los datos que estan contenidos en berlin.json
+import { useState } from 'react';
 import profiles from '../data/berlin.json';
 import './Facebook.css';
 
 export default function FaceBook(){
+
+    const [selectedCountry, setSelectedCountry] = useState('')
     
     let country = profiles.map(profile => profile.country)
     //console.log(country)
@@ -15,11 +18,17 @@ export default function FaceBook(){
     const countries = [... new Set(country)]
     console.log(countries)
 
+    function handleClick(country){
+        setSelectedCountry(country)
+    }
+
     return (
         <>
-        {countries.map(country => <button onClick={handleCkick} id={country}>{country}</button>)}
+        {/* Button Element */}
+        {countries.map(country => <button onClick={() => handleClick(country)} className='btn-country' style={{backgroundColor: selectedCountry  === country ? "rgb(111, 111, 211)" : 'transparent'}}>{country}</button>)}
+        {/* Profile Elements */}
         {profiles.map((profile, index) => {
-            return <div className='container' key={index}>
+            return <div className='container' key={index} style={{backgroundColor: selectedCountry  === profile.country ? "rgb(111, 111, 211)" : 'transparent'}}>
                 <img src={profile.img} className='profile-img' alt={`Profile of ${profile.firstName}`}></img>
                 <ul className='data'>
                     <li className='profile-list'><strong>First Name:</strong> {profile.firstName}</li>
@@ -29,6 +38,7 @@ export default function FaceBook(){
                 </ul>
             </div>
         })}
+
         </>
     )
 }
